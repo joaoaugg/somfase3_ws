@@ -1,0 +1,31 @@
+running egg_info
+creating ../../build/teste_som/teste_som.egg-info
+writing ../../build/teste_som/teste_som.egg-info/PKG-INFO
+writing dependency_links to ../../build/teste_som/teste_som.egg-info/dependency_links.txt
+writing entry points to ../../build/teste_som/teste_som.egg-info/entry_points.txt
+writing requirements to ../../build/teste_som/teste_som.egg-info/requires.txt
+writing top-level names to ../../build/teste_som/teste_som.egg-info/top_level.txt
+writing manifest file '../../build/teste_som/teste_som.egg-info/SOURCES.txt'
+reading manifest file '../../build/teste_som/teste_som.egg-info/SOURCES.txt'
+writing manifest file '../../build/teste_som/teste_som.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/avant_ws/build/teste_som/build
+creating /home/avant_ws/build/teste_som/build/lib
+creating /home/avant_ws/build/teste_som/build/lib/teste_som
+copying teste_som/__init__.py -> /home/avant_ws/build/teste_som/build/lib/teste_som
+running install
+running install_lib
+creating /home/avant_ws/install/teste_som/lib/python3.10/site-packages/teste_som
+copying /home/avant_ws/build/teste_som/build/lib/teste_som/__init__.py -> /home/avant_ws/install/teste_som/lib/python3.10/site-packages/teste_som
+byte-compiling /home/avant_ws/install/teste_som/lib/python3.10/site-packages/teste_som/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/avant_ws/install/teste_som/share/ament_index
+creating /home/avant_ws/install/teste_som/share/ament_index/resource_index
+creating /home/avant_ws/install/teste_som/share/ament_index/resource_index/packages
+copying resource/teste_som -> /home/avant_ws/install/teste_som/share/ament_index/resource_index/packages
+copying package.xml -> /home/avant_ws/install/teste_som/share/teste_som
+running install_egg_info
+Copying ../../build/teste_som/teste_som.egg-info to /home/avant_ws/install/teste_som/lib/python3.10/site-packages/teste_som-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/avant_ws/build/teste_som/install.log'

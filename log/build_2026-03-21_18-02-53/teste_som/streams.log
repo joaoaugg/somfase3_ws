@@ -1,0 +1,33 @@
+[0.449s] Invoking command in '/home/avant_ws/src/teste_som': PYTHONPATH=/home/avant_ws/build/teste_som/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/avant_ws/install/teste_som/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/teste_som build --build-base /home/avant_ws/build/teste_som/build install --record /home/avant_ws/build/teste_som/install.log --single-version-externally-managed install_data
+[0.625s] running egg_info
+[0.625s] creating ../../build/teste_som/teste_som.egg-info
+[0.625s] writing ../../build/teste_som/teste_som.egg-info/PKG-INFO
+[0.625s] writing dependency_links to ../../build/teste_som/teste_som.egg-info/dependency_links.txt
+[0.625s] writing entry points to ../../build/teste_som/teste_som.egg-info/entry_points.txt
+[0.626s] writing requirements to ../../build/teste_som/teste_som.egg-info/requires.txt
+[0.626s] writing top-level names to ../../build/teste_som/teste_som.egg-info/top_level.txt
+[0.626s] writing manifest file '../../build/teste_som/teste_som.egg-info/SOURCES.txt'
+[0.627s] reading manifest file '../../build/teste_som/teste_som.egg-info/SOURCES.txt'
+[0.627s] writing manifest file '../../build/teste_som/teste_som.egg-info/SOURCES.txt'
+[0.628s] running build
+[0.628s] running build_py
+[0.628s] creating /home/avant_ws/build/teste_som/build
+[0.628s] creating /home/avant_ws/build/teste_som/build/lib
+[0.628s] creating /home/avant_ws/build/teste_som/build/lib/teste_som
+[0.628s] copying teste_som/__init__.py -> /home/avant_ws/build/teste_som/build/lib/teste_som
+[0.628s] running install
+[0.628s] running install_lib
+[0.629s] creating /home/avant_ws/install/teste_som/lib/python3.10/site-packages/teste_som
+[0.629s] copying /home/avant_ws/build/teste_som/build/lib/teste_som/__init__.py -> /home/avant_ws/install/teste_som/lib/python3.10/site-packages/teste_som
+[0.629s] byte-compiling /home/avant_ws/install/teste_som/lib/python3.10/site-packages/teste_som/__init__.py to __init__.cpython-310.pyc
+[0.629s] running install_data
+[0.629s] creating /home/avant_ws/install/teste_som/share/ament_index
+[0.630s] creating /home/avant_ws/install/teste_som/share/ament_index/resource_index
+[0.630s] creating /home/avant_ws/install/teste_som/share/ament_index/resource_index/packages
+[0.630s] copying resource/teste_som -> /home/avant_ws/install/teste_som/share/ament_index/resource_index/packages
+[0.630s] copying package.xml -> /home/avant_ws/install/teste_som/share/teste_som
+[0.630s] running install_egg_info
+[0.631s] Copying ../../build/teste_som/teste_som.egg-info to /home/avant_ws/install/teste_som/lib/python3.10/site-packages/teste_som-0.0.0-py3.10.egg-info
+[0.632s] running install_scripts
+[0.648s] writing list of installed files to '/home/avant_ws/build/teste_som/install.log'
+[0.667s] Invoked command in '/home/avant_ws/src/teste_som' returned '0': PYTHONPATH=/home/avant_ws/build/teste_som/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/avant_ws/install/teste_som/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/teste_som build --build-base /home/avant_ws/build/teste_som/build install --record /home/avant_ws/build/teste_som/install.log --single-version-externally-managed install_data
