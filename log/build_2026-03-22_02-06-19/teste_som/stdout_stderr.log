@@ -1,0 +1,22 @@
+running egg_info
+writing ../../build/teste_som/teste_som.egg-info/PKG-INFO
+writing dependency_links to ../../build/teste_som/teste_som.egg-info/dependency_links.txt
+writing entry points to ../../build/teste_som/teste_som.egg-info/entry_points.txt
+writing requirements to ../../build/teste_som/teste_som.egg-info/requires.txt
+writing top-level names to ../../build/teste_som/teste_som.egg-info/top_level.txt
+reading manifest file '../../build/teste_som/teste_som.egg-info/SOURCES.txt'
+writing manifest file '../../build/teste_som/teste_som.egg-info/SOURCES.txt'
+running build
+running build_py
+copying teste_som/somfase3.py -> /home/somfase3_ws/build/teste_som/build/lib/teste_som
+running install
+running install_lib
+copying /home/somfase3_ws/build/teste_som/build/lib/teste_som/somfase3.py -> /home/somfase3_ws/install/teste_som/lib/python3.10/site-packages/teste_som
+byte-compiling /home/somfase3_ws/install/teste_som/lib/python3.10/site-packages/teste_som/somfase3.py to somfase3.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/somfase3_ws/install/teste_som/lib/python3.10/site-packages/teste_som-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/teste_som/teste_som.egg-info to /home/somfase3_ws/install/teste_som/lib/python3.10/site-packages/teste_som-0.0.0-py3.10.egg-info
+running install_scripts
+Installing som_fase3 script to /home/somfase3_ws/install/teste_som/lib/teste_som
+writing list of installed files to '/home/somfase3_ws/build/teste_som/install.log'
