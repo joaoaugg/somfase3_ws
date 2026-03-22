@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            "som_fase3 = teste_som.somfase3: main"
         ],
     },
 )
