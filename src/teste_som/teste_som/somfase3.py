@@ -1,60 +1,69 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Bool
+from std_srvs.srv import Empty
 import os
 import subprocess
 
 class SoundNode(Node):
     def __init__(self):
-        super().__init__("sound_subscriber")
-        
-        # Inscrever no tópico
-        self.subscriber_ = self.create_subscription(
-            Bool, "topic_boolean", self.listener_callback, 10
-        )
-        self.get_logger().info("Subscriber de som inicializado. Aguardando mensagens...")
+        super().__init__("sound_service_node")
 
-        # Caminho dos sons na Jetson
-        self.path_valor_acima = "/home/somfase3_ws/src/fase3_pkg/fase3_pkg/som_dentro_do_padrao.mp3"
-        self.path_valor_abaixo = "/home/somfase3_ws/src/fase3_pkg/fase3_pkg/som_fora_do_padrao.mp3"
+        # Criando serviços
+        self.srv_in_boundary = self.create_service(
+            Empty, "/in_boundary", self.in_boundary_callback
+        )
+
+        self.srv_out_boundary = self.create_service(
+            Empty, "/out_of_boundary", self.out_of_boundary_callback
+        )
+
+        self.get_logger().info("Serviços de som prontos!")
+
+        # Caminhos dos sons
+        self.path_valor_dentro = "/home/somfase3_ws/src/fase3_pkg/fase3_pkg/som_dentro_do_padrao.mp3"
+        self.path_valor_fora = "/home/somfase3_ws/src/fase3_pkg/fase3_pkg/som_fora_do_padrao.mp3"
+
         self.current_process = None
-    
-    def listener_callback(self, msg):
-        self.get_logger().info(f"Recebi: {msg.data}")
-        
-        # Finaliza som anterior se estiver tocando
+
+    def stop_current_sound(self):
         if self.current_process is not None:
             self.current_process.terminate()
             self.current_process = None
-        
-        # Decide qual som tocar
-        if msg.data:
-            if os.path.exists(self.path_valor_acima):
-                self.get_logger().info("Tocando som_dentro_do_padrao.mp3")
-                self.current_process = subprocess.Popen(
-                    ["mpg123", self.path_valor_acima],
-                    stdout=subprocess.DEVNULL,
-                    stderr=subprocess.DEVNULL
-                )
-            else:
-                self.get_logger().error(f"Arquivo não encontrado: {self.path_valor_acima}")
+
+    def play_sound(self, path, descricao):
+        if os.path.exists(path):
+            self.get_logger().info(f"Tocando {descricao}")
+            self.current_process = subprocess.Popen(
+                ["mpg123", path],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
         else:
-            if os.path.exists(self.path_valor_abaixo):
-                self.get_logger().info("Tocando som_fora_do_padrao.mp3")
-                self.current_process = subprocess.Popen(
-                    ["mpg123", self.path_valor_abaixo],
-                    stdout=subprocess.DEVNULL,
-                    stderr=subprocess.DEVNULL
-                )
-            else:
-                self.get_logger().error(f"Arquivo não encontrado: {self.path_valor_abaixo}")
+            self.get_logger().error(f"Arquivo não encontrado: {path}")
+
+    def in_boundary_callback(self, request, response):
+        self.get_logger().info("Chamaram /in_boundary")
+
+        self.stop_current_sound()
+        self.play_sound(self.path_valor_dentro, "som_dentro_do_padrao.mp3")
+
+        return response
+
+    def out_of_boundary_callback(self, request, response):
+        self.get_logger().info("Chamaram /out_of_boundary")
+
+        self.stop_current_sound()
+        self.play_sound(self.path_valor_fora, "som_fora_do_padrao.mp3")
+
+        return response
 
 def main(args=None):
     rclpy.init(args=args)
     node = SoundNode()
     rclpy.spin(node)
     rclpy.shutdown()
+
 
 if __name__ == "__main__":
     main()
