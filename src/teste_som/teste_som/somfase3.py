@@ -21,8 +21,11 @@ class SoundNode(Node):
         self.get_logger().info("Serviços de som prontos!")
 
         # Caminhos dos sons
-        self.path_valor_dentro = "/home/somfase3_ws/src/fase3_pkg/fase3_pkg/som_dentro_do_padrao.mp3"
-        self.path_valor_fora = "/home/somfase3_ws/src/fase3_pkg/fase3_pkg/som_fora_do_padrao.mp3"
+        base_path = os.getcwd()
+
+        self.path_valor_dentro = os.path.join(base_path, "som_dentro_do_padrao.mp3")
+        self.path_valor_fora = os.path.join(base_path, "som_fora_do_padrao.mp3")        
+
 
         self.current_process = None
 
