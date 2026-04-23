@@ -43,7 +43,7 @@ class SoundNode(Node):
             self.get_logger().error(f"Arquivo não encontrado: {path}")
 
     def in_boundary_callback(self, request, response):
-        self.get_logger().info("Chamaram /in_boundary")
+        self.get_logger().info("Som dentro do padrão! Ativando emissão de som...")
 
         self.stop_current_sound()
         self.play_sound(self.path_valor_dentro, "som_dentro_do_padrao.mp3")
@@ -51,7 +51,7 @@ class SoundNode(Node):
         return response
 
     def out_of_boundary_callback(self, request, response):
-        self.get_logger().info("Chamaram /out_of_boundary")
+        self.get_logger().info("Som fora do padrão! Ativando emissão de som...")
 
         self.stop_current_sound()
         self.play_sound(self.path_valor_fora, "som_fora_do_padrao.mp3")
